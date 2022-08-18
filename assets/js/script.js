@@ -11,4 +11,4 @@ fakedata.gen.forEach(element => {
     //attach to parent div
 });
 
-//FOR TODAY: Work on the fetch to pull data
+//FOR TODAY: Work on the fetch to pull data...
