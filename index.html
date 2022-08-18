@@ -1,13 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <title>Document</title>
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./assets/css/styles.css"/>
+    <title>Music Quiz Game</title>
   </head>
   <body>
-    <script src="./assets/js/script.js"></script>
+    <div class="flex-container">
+      <div class="quiz-intro">
+          <header>
+              <h1>Song Trivia</h1>
+          </header>
+          <p>Test you knowledge with this song quiz game that allows you to select a genre of your choice and listen to 5 rounds of different songs. You have 10 seconds to guess the correct name, otherwise the question counts as a wrong answer. Good luck!</p>
+          <div>
+              <button id= "start" class="start-btn">Play Now</button>
+          </div>
+      </div>
+
+      <div id="select-genre">
+          <h1 id='selection'>Choose your music quiz genre</h1>
+          <!-- API to populate genres, buttons are placeholder and will be generated in js-->
+          <button id="rock" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Rock</button>
+          <button id="pop">Pop</button>
+          <button id="hip-hop">Hip Hop</button>
+          <button id="R&B">R&B</button>
+          <button id="indie">Indie</button>
+          <button id="country">Country</button>
+      </div>
+      <div id="question">
+        <h1 id='song-prompt'></h1> 
+        <div class="score">Score: </div>
+        <ul>
+          <button id="anwer1"></button>
+          <button id="answer2"></button>
+          <button id="answer3"></button>
+          <button id="answer4"></button>
+        </ul>
+        <div class="music-player">
+          <!-- to hold the music clip progress bar?? -->
+          <!-- paste in whatever music player i choose -->
+        </div>
+      </div>
+      <!-- These screens are optional, might include if we have time -->
+      <div class="answer-choice-response">
+        <h1 id="answer-message"> </h1> 
+        <button class="selected-answer"></button>
+        <button class = "continue-button"> Continue</button>
+      </div>
+      <div class="final-score">
+        <h1 id="final-score-count"></h1>
+        <!-- Giphy goes here -->
+        <textarea rel="initials"></textarea>
+        <button class="saveInitials">Save</button>
+
+        <button id="play-again">Play Again</button>
+        <button id="see-scores">See Scores</button>
+        <button id="done-game">Done</button>
+      </div>
+
+      <div class="leaderboard">
+        <h1>High Scores</h1>
+        <ul> 
+          <!-- will populate with data from localStorage -->
+        </ul>
+        <!-- 'Play Again' and 'Done' buttons will remain visible-->
+      </div>
+
+      </div>
+  <script src="./assets/js/script.js"></script>
   </body>
 </html>
