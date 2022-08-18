@@ -8,56 +8,59 @@
     <title>Music Quiz Game</title>
   </head>
   <body>
-    <div class="flex-container">
-      <div class="quiz-intro">
-          <header>
-              <h1>Song Trivia</h1>
+    <div class="flex flex-col content-center max-w-screen-lg mx-auto">
+      <div class="quiz-intro flex content-center p-4 h-screen">
+        <div class="container mx-auto self-center">
+          <header class="text-center">
+              <h1 class="text-5xl">Guess the Song Quiz</h1>
           </header>
-          <p>Test you knowledge with this song quiz game that allows you to select a genre of your choice and listen to 5 rounds of different songs. You have 10 seconds to guess the correct name, otherwise the question counts as a wrong answer. Good luck!</p>
-          <div>
-              <button id= "start" class="start-btn">Play Now</button>
+          <p class="text-center p-3">Test you knowledge with this song quiz game that allows you to select a genre of your choice and listen to 5 rounds of different songs. You have 10 seconds to guess the correct name, otherwise the question counts as a wrong answer. Good luck!</p>
+          <div class="text-center">
+              <button id="start" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded ">Play Now</button>
           </div>
+        </div>
       </div>
 
       <div id="select-genre">
-          <h1 id='selection'>Choose your music quiz genre</h1>
+          <h1 id='selection' class="text-center text-4xl p-3">Choose your music quiz genre</h1>
           <!-- API to populate genres, buttons are placeholder and will be generated in js-->
-          <button id="rock" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Rock</button>
-          <button id="pop">Pop</button>
-          <button id="hip-hop">Hip Hop</button>
-          <button id="R&B">R&B</button>
-          <button id="indie">Indie</button>
-          <button id="country">Country</button>
+          <div class="grid grid-cols-2 gap-6">
+          <button id="rock" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Rock</button>
+          <button id="pop" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Pop</button>
+          <button id="hip-hop" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Hip Hop</button>
+          <button id="R&B" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">R&B</button>
+          <button id="indie" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Indie</button>
+          <button id="country" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Country</button>
+          </div>
       </div>
       <div id="question">
-        <h1 id='song-prompt'></h1> 
+        <h1 id='song-prompt' class="text-center text-4xl p-3"></h1> 
         <div class="score">Score: </div>
-        <ul>
-          <button id="anwer1"></button>
-          <button id="answer2"></button>
-          <button id="answer3"></button>
-          <button id="answer4"></button>
-        </ul>
+        <div class="grid grid-cols-2 gap-6">
+          <button id="anwer1" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
+          <button id="answer2" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
+          <button id="answer3" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
+          <button id="answer4" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
+        </div>
         <div class="music-player">
-          <!-- to hold the music clip progress bar?? -->
-          <!-- paste in whatever music player i choose -->
+          <!-- paste in music player code from Spotify -->
         </div>
       </div>
       <!-- These screens are optional, might include if we have time -->
-      <div class="answer-choice-response">
+      <!-- <div class="answer-choice-response">
         <h1 id="answer-message"> </h1> 
-        <button class="selected-answer"></button>
-        <button class = "continue-button"> Continue</button>
-      </div>
+        <button class="selected-answer" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
+        <button class = "continue-button" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"> Continue</button>
+      </div> -->
       <div class="final-score">
         <h1 id="final-score-count"></h1>
         <!-- Giphy goes here -->
-        <textarea rel="initials"></textarea>
-        <button class="saveInitials">Save</button>
+        <textarea rel="initials" class="text-center text-4xl p-3"></textarea>
+        <button class="saveInitials bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Save</button>
 
-        <button id="play-again">Play Again</button>
-        <button id="see-scores">See Scores</button>
-        <button id="done-game">Done</button>
+        <button class="play-again bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Play Again</button>
+        <button class="see-scores bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">See Scores</button>
+        <button class="done-game bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Done</button>
       </div>
 
       <div class="leaderboard">
