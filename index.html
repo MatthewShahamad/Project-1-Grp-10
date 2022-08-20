@@ -1,46 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./assets/css/styles.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Music Quiz Game</title>
   </head>
   <body>
-    <div class="flex flex-col content-center max-w-screen-lg mx-auto">
+    <div id ="container" class="flex flex-col content-center max-w-screen-lg mx-auto">
       <div class="quiz-intro flex content-center p-4 h-screen">
         <div class="container mx-auto self-center">
           <header class="text-center">
-              <h1 class="text-5xl">Guess the Song Quiz</h1>
+            <h1 class="text-5xl">Guess the Song Quiz</h1>
           </header>
-          <p class="text-center p-3">Test you knowledge with this song quiz game that allows you to select a genre of your choice and listen to 5 rounds of different songs. You have 10 seconds to guess the correct name, otherwise the question counts as a wrong answer. Good luck!</p>
+          <p class="text-center p-3">
+            Test you knowledge with this song quiz game that allows you to
+            select a genre of your choice and listen to 5 rounds of different
+            songs. You have 10 seconds to guess the correct name, otherwise the
+            question counts as a wrong answer. Good luck!
+          </p>
           <div class="text-center">
-              <button id="start" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded ">Play Now</button>
+            <button
+              id="start-button"
+              class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+            >
+              Play Now
+            </button>
           </div>
         </div>
       </div>
 
-      <div id="select-genre">
-          <h1 id='selection' class="text-center text-4xl p-3">Choose your music quiz genre</h1>
-          <!-- API to populate genres, buttons are placeholder and will be generated in js-->
-          <div class="grid grid-cols-2 gap-6">
-          <button id="rock" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Rock</button>
-          <button id="pop" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Pop</button>
-          <button id="hip-hop" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Hip Hop</button>
-          <button id="R&B" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">R&B</button>
-          <button id="indie" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Indie</button>
-          <button id="country" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Country</button>
-          </div>
-      </div>
-      <div id="question">
-        <h1 id='song-prompt' class="text-center text-4xl p-3"></h1> 
-        <div class="score">Score: </div>
+      <div id ="selectGenre "class="select-genre max-w-screen-lg mx-auto h-screen">
+        <h1 id="selection" class="text-center text-4xl p-3">
+          Choose your music quiz genre
+        </h1>
+        <!-- API to populate genres, buttons are placeholder and will be generated in js-->
         <div class="grid grid-cols-2 gap-6">
-          <button id="anwer1" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
-          <button id="answer2" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
-          <button id="answer3" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
-          <button id="answer4" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
+          <button
+            id="0"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          >
+            Rock
+          </button>
+          <button
+            id="1"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          >
+            Pop
+          </button>
+          <button
+            id="2"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          >
+            Hip Hop
+          </button>
+          <button
+            id="3"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          >
+            R&B
+          </button>
+          <button
+            id="4"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          >
+            Indie
+          </button>
+          <button
+            id="5"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          >
+            Country
+          </button>
+        </div>
+      </div>
+      <div id="questions" class="question max-w-screen-lg h-screen">
+        <div class="score">Score:</div>
+        <h1 id="song-prompt" class="text-center text-4xl p-3">Song 1</h1>
+        <div class="grid grid-cols-2 gap-6 mx-auto">
+          <button
+            id="anwer1"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          ></button>
+          <button
+            id="answer2"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          ></button>
+          <button
+            id="answer3"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          ></button>
+          <button
+            id="answer4"
+            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          ></button>
         </div>
         <div class="music-player">
           <!-- paste in music player code from Spotify -->
@@ -52,26 +106,45 @@
         <button class="selected-answer" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"></button>
         <button class = "continue-button" class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"> Continue</button>
       </div> -->
-      <div class="final-score">
+      <div id="finalScore" class="final-score max-w-screen-lg mx-auto h-screen">
         <h1 id="final-score-count"></h1>
         <!-- Giphy goes here -->
-        <textarea rel="initials" class="text-center text-4xl p-3"></textarea>
-        <button class="saveInitials bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Save</button>
-
-        <button class="play-again bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Play Again</button>
-        <button class="see-scores bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">See Scores</button>
-        <button class="done-game bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded">Done</button>
+        <div>
+          <textarea rel="initials" class="text-center"></textarea>
+          <button
+            class="saveInitials bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+          >
+            Save
+          </button>
+        </div>
+        <div>
+        <button
+          class="play-again bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+        >
+          Play Again
+        </button>
+        <button
+          class="see-scores bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+        >
+          See Scores
+        </button>
+        <button
+          class="done-game bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
+        >
+          Done
+        </button>
+      </div>
       </div>
 
-      <div class="leaderboard">
+      <div id="leaderboard" class="leaderboard">
         <h1>High Scores</h1>
-        <ul> 
+        <ul>
           <!-- will populate with data from localStorage -->
         </ul>
         <!-- 'Play Again' and 'Done' buttons will remain visible-->
       </div>
-
-      </div>
-  <script src="./assets/js/script.js"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
