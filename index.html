@@ -1,119 +1,52 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <title>Music Quiz Game</title>
-  </head>
-  <body>
-    <div id ="container" class="flex flex-col content-center max-w-screen-lg mx-auto">
-      <div class="quiz-intro flex content-center p-4 h-screen">
-        <div class="container mx-auto self-center">
-          <header class="text-center">
-            <h1 class="text-5xl">Guess the Song Quiz</h1>
-          </header>
-          <p class="text-center p-3">
-            Test you knowledge with this song quiz game that allows you to
-            select a genre of your choice and listen to 5 rounds of different
-            songs. You have 10 seconds to guess the correct name, otherwise the
-            question counts as a wrong answer. Good luck!
-          </p>
-          <div class="text-center">
-            <button
-              id="start-button"
-              class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
-            >
-              Play Now
-            </button>
-          </div>
-        </div>
-      </div>
+  <title>Chat With AI</title>
+</head>
 
-      <div id ="selectGenre "class="select-genre max-w-screen-lg mx-auto h-screen">
-        <h1 id="selection" class="text-center text-4xl p-3">
-          Choose your music quiz genre
-        </h1>
-        <!-- API to populate genres, buttons are placeholder and will be generated in js-->
-        <div class="grid grid-cols-2 gap-6">
-          <button
-            id="0"
-            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
-          >
-            Rock
-          </button>
-          <button
-            id="1"
-            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
-          >
-            Pop
-          </button>
-          <button
-            id="2"
-            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
-          >
-            Hip Hop 
-          </button>
-          <button
-            id="3"
-            class="bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
-          >
-          R&B
-        </button>
-        </div>
-      </div>
+<body id ="container" class="flex flex-row flex-wrap mx-auto">
+    <!-- header section -->
+  <header class="hero h-40 w-full bg-gradient-to-r from-orange-400 via-red-500 to-pink-50">
+    <h1 class="app-title text-center text-4xl p-5 font-mono">
+      Chat With AI
+    </h1>
+    <p class="text-center p-3 font-mono">Bring anything your imagination can conjure to life though artificial intelligence. 
+    </p>
+  </header>
 
-      <div class="question max-w-screen-lg h-screen">
-        <div class="score">Score:</div>
-        <h1 id="song-prompt" class="text-center text-4xl p-3">Song 1</h1>
-        <div class="grid grid-cols-2 gap-6 mx-auto">
-          <ul class="answers">
-            <!-- "bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded -->
-          </ul>
-        </div>
+<!-- This is the form where the user inputs the text -->
+    <div class="max-w-md rounded overflow-hidden shadow-xl m-10">
+      <div class="card p-5 bg-pink-50">
+        <h3 class="text-black font-mono"> Type Anything </h3>
+        <form id="user-input" class="card-body">
+            <input type="text" id="user-text" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block h-10 w-80 p-2.5 dark:border-gray-600 dark:focus:border-blue-500">
+          <button type="submit" id="enter-btn" class="bg-orange-400 hover:bg-red-500 text-white font-mono py-2 px-4 rounded m-1">Enter</button>
+        </form>
       </div>
-  
-      <div class="final-score max-w-screen-lg mx-auto h-screen">
-        <h1 id="final-score-count"></h1>
-        <!-- Giphy goes here -->
-        <div>
-          <span>Your Initials: </span>
-          <textarea rel="initials" class="text-center "></textarea>
-          <button
-            class="save-initials bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
-          >
-            Save
-          </button>
-        </div>
-
-        <div>
-        <button
-          class="play-again bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
-        >
-          Play Again
-        </button>
-        <button
-          class="see-scores bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
-        >
-          See Scores
-        </button>
-        <button
-          class="done-game bg-teal-400 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded"
-        >
-          Done
-        </button>
-      </div>
-      </div>
-
-      <div id="leaderboard" class="leaderboard">
-        <h1>High Scores</h1>
-        <!-- <ul>        </ul> -->
-        <!-- 'Play Again' and 'Done' buttons will remain visible-->
-      </div>
-  
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+
+    <!-- this is where the API should input it's reponse text -->
+    <div class="max-w-md rounded overflow-hidden shadow-xl m-10 bg-pink-50">
+        <div class="card p-5 bg-pink-50">
+          <form id="ai-response" class="card-body">
+            <input type="text" id="ai-text" class="content-center border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block h-20 w-80 p-2.5 dark:border-gray-600 dark:focus:border-blue-500">
+
+          </form>
+        </div>
+      </div>
+
+     <div id="gif-placement"> 
+        <!-- gif stuff here -->
+     </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
