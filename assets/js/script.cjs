@@ -1,3 +1,5 @@
+var text = document.querySelector("#card-body");
+
 let APIKEY = "ZkdYEfV8BG05vP9v7PEIKKd9EaPzatqu";
 // https://developers.giphy.com/docs/api/endpoint
 document.addEventListener("DOMContentLoaded", init);
@@ -26,9 +28,20 @@ function init() {
         let gif = document.querySelector(".gif"); //references gif tag in html
         gif.insertAdjacentElement("afterbegin", figure); //adds elements to html tag
         document.querySelector("#user-text").value = ""; //references text inputted by user from html tag
+        localStorage.setItem("question", gif);
+        renderLastQuestion();
       })
       .catch((err) => {
         console.error(err); //logs errors to the console
       });
   });
+}
+
+function renderLastQuestion() {
+  var displayText = localStorage.getItem("question");
+
+  if ((displayText = "")) {
+    return;
+  }
+  text.textContent = DisplayText;
 }
